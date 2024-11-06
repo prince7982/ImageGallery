@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./photos/anime1.jpeg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <input type="radio" name="Photos" id="check1" checked />
+    <input type="radio" name="Photos" id="check2" />
+    <input type="radio" name="Photos" id="check3" />
+    <input type="radio" name="Photos" id="check4" />
+    <input type="radio" name="Photos" id="check5" />
+
+    <div class="container">
+        <h1>IMAGE GALLERY</h1>
+        <div class="top-content">
+            <h3>Image Gallery</h3>
+            <span class="toggle-btn" onclick="toggleLabels()"><i class="fa-solid fa-bars"></i></span>
+            <div class="labels-container">
+            <label for="check1">All Photos</label>
+            <label for="check2">Living Creatures</label>
+            <label for="check3">My Photos</label>
+            <label for="check4">Anime</label>
+            <label for="check5">Cars</label>
+            </div>
+        </div>
+
+        <div class="full-img" id="fullImgBox">
+            <img src="./photos/n1.jpg" id="fullImg" />
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
+        <div class="photo-gallery">
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/anime1.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc1.jpeg" />
+            </div>
+            <div class="pic mine" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/p1.jpg" />
+            </div>
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/anime5.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc2.jpeg" />
+            </div>
+            <div class="pic mine" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/p12.jpg" />
+            </div>
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/n3.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc3.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc5.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc6.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc7.jpeg" />
+            </div>
+            <div class="pic mine" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/p9.jpg" />
+            </div>
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/n4.jpeg" />
+            </div>
+            <div class="pic friends" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/lc4.jpeg" />
+            </div>
+            <div class="pic mine" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/f6.jpg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c1.jpeg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c2.jpeg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c3.jpeg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c4.jpeg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c5.jpeg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c6.jpeg" />
+            </div>
+            <div class="pic cars" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/c7.jpeg" />
+            </div>
+
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/anime3.jpeg" />
+            </div>
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/anime4.jpeg" />
+            </div>
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/anime6.jpeg" />
+            </div>
+            <div class="pic place" onclick="openFullImg(this.querySelector('img').src)">
+                <img src="./photos/anime2.jpeg" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox");
+        var fullImg = document.getElementById("fullImg");
+
+        function openFullImg(pic) {
+            fullImgBox.style.display = "flex";
+            fullImg.src = pic;
+        }
+
+        function closeFullImg() {
+            fullImgBox.style.display = "none";
+        }
+        
+
+
+        function toggleLabels() {
+            const topContent = document.querySelector('.top-content');
+            const toggleBtnIcon = document.querySelector('.toggle-btn i');
+            topContent.classList.toggle('show-labels');
+
+            // Toggle between bars and X icons
+            if (topContent.classList.contains('show-labels')) {
+                toggleBtnIcon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                toggleBtnIcon.classList.replace('fa-times', 'fa-bars');
+            }
+        }
+
+        // Hide labels when a label is clicked
+        const labels = document.querySelectorAll('.label-item');
+        labels.forEach(label => {
+            label.addEventListener('click', function () {
+                const topContent = document.querySelector('.top-content');
+                topContent.classList.remove('show-labels');
+                const toggleBtnIcon = document.querySelector('.toggle-btn i');
+                toggleBtnIcon.classList.replace('fa-times', 'fa-bars');
+            });
+        });
+    </script>
+</body>
+
+</html>
